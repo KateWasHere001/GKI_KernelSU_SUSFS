@@ -53,7 +53,7 @@ on:
 
 jobs:
   notify:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Send Telegram Notification
         run: |
@@ -69,7 +69,7 @@ jobs:
           #  -F parse_mode="Markdown"
             
   set-matrix:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     timeout-minutes: 120
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
@@ -133,7 +133,7 @@ jobs:
 
   release:
     if: ${{ inputs.release_type == 'Release' || inputs.release_type == 'Pre-Release' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs:
       - build-kernels-a12
       - build-kernels-a13
